@@ -1,1 +1,4 @@
 numpy>=1.22
+# wait until networkx dependency conflict is resolved in the next release
+graphix @ git+https://github.com/TeamGraphix/graphix.git@master
+perceval-quandela>=0.9.1
