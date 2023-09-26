@@ -12,6 +12,7 @@ class TestConverter(unittest.TestCase):
         circuit.h(0)
         pattern = circuit.transpile()
         pattern.standardize()
+        pattern.shift_signals()
 
         exp = to_perceval(pattern)
         exp.set_local_processor("SLOS")
@@ -27,6 +28,7 @@ class TestConverter(unittest.TestCase):
         circuit.x(0)
         pattern = circuit.transpile()
         pattern.standardize()
+        pattern.shift_signals()
 
         exp = to_perceval(pattern)
         exp.set_local_processor("SLOS")
@@ -42,12 +44,15 @@ class TestConverter(unittest.TestCase):
         circuit.rx(0, np.pi / 1.23)
         pattern = circuit.transpile()
         pattern.standardize()
+        pattern.shift_signals()
 
         exp = to_perceval(pattern)
         exp.set_local_processor("SLOS")
         dist = exp.get_probability_distribution()
 
-        ans_dist = PhotonDistribution({"|0>": np.cos(np.pi / 1.23 / 2) ** 2, "|1>": np.sin(np.pi / 1.23 / 2) ** 2})
+        ans_dist = PhotonDistribution(
+            {"|0>": np.cos(np.pi / 1.23 / 2) ** 2, "|1>": np.sin(np.pi / 1.23 / 2) ** 2}
+        )
         self.assertAlmostEqual(dist["|0>"], ans_dist["|0>"])
         self.assertAlmostEqual(dist["|1>"], ans_dist["|1>"])
         self.assertTrue(all(k in dist.keys() for k in ans_dist.keys()))
@@ -58,6 +63,7 @@ class TestConverter(unittest.TestCase):
         circuit.cnot(0, 1)
         pattern = circuit.transpile()
         pattern.standardize()
+        pattern.shift_signals()
 
         exp = to_perceval(pattern)
         exp.set_local_processor("SLOS")
@@ -74,6 +80,7 @@ class TestConverter(unittest.TestCase):
         circuit.cnot(0, 1)
         pattern = circuit.transpile()
         pattern.standardize()
+        pattern.shift_signals()
         pattern.perform_pauli_measurements()
 
         exp = to_perceval(pattern)
@@ -93,6 +100,7 @@ class TestConverter(unittest.TestCase):
         circuit.cnot(1, 2)
         pattern = circuit.transpile()
         pattern.standardize()
+        pattern.shift_signals()
         pattern.perform_pauli_measurements()
 
         exp = to_perceval(pattern)
@@ -111,6 +119,7 @@ class TestConverter(unittest.TestCase):
         circuit.ry(1, np.pi / 4)
         pattern = circuit.transpile()
         pattern.standardize()
+        pattern.shift_signals()
         pattern.perform_pauli_measurements()
 
         exp = to_perceval(pattern)
