@@ -2,14 +2,6 @@ import numpy as np
 import perceval.components as comp
 import sympy as sp
 
-# Conjugation of Clifford gates result in a Clifford gate.
-# CLIFFORD_CONJ provides the Clifford index of conjugated matrix.
-# Example (S and S dagger):  CLIFFORD_CONJ[4]
-# see graphix.clifford module for the definitions and details of Clifford operatos for each index.
-CLIFFORD_CONJ = np.array(
-    [0, 1, 2, 3, 5, 4, 6, 15, 12, 9, 10, 11, 8, 13, 14, 7, 20, 22, 23, 21, 16, 19, 17, 18], dtype=np.int32
-)
-
 # perceval representation of Clifford gates.
 # see graphix.clifford module for the definitions and details of Clifford operatos for each index.
 CLIFFORD_TO_PERCEVAL_BS = [
