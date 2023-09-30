@@ -6,5 +6,5 @@
 **/build
 dist/*
 docs/source/gallery/**
-.tox
-Pipfile
+.tox/
+.vscode/

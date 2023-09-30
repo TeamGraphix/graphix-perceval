@@ -1,16 +1,16 @@
 from __future__ import annotations
-from _collections_abc import dict_items
-import itertools
 
-from perceval.algorithm import Sampler
-from perceval.utils import PostSelect
-import perceval as pcvl
-import sympy as sp
+import itertools
+import sys
 import warnings
 from enum import Enum
-from tabulate import tabulate
 
-import sys
+import perceval as pcvl
+import sympy as sp
+from _collections_abc import dict_items
+from perceval.algorithm import Sampler
+from perceval.utils import PostSelect
+from tabulate import tabulate
 
 IS_NOTEBOOK = "ipykernel" in sys.modules
 if IS_NOTEBOOK:

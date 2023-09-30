@@ -1,6 +1,6 @@
 import numpy as np
-import sympy as sp
 import perceval.components as comp
+import sympy as sp
 
 # Conjugation of Clifford gates result in a Clifford gate.
 # CLIFFORD_CONJ provides the Clifford index of conjugated matrix.

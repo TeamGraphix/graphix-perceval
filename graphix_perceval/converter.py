@@ -1,20 +1,18 @@
 from __future__ import annotations
+
 import graphix
-import numpy as np
 import perceval as pcvl
-from perceval import components as comp
 import sympy as sp
+from graphix.extraction import Cluster, ClusterType, extract_clusters_from_graph
+from perceval import components as comp
 
-from graphix_perceval.experiment import PercevalExperiment, Photon, PhotonType
-from graphix_perceval.extraction import (
-    Cluster,
-    ClusterType,
-    extract_clusters_from_graph,
-)
 from graphix_perceval.clifford import CLIFFORD_TO_PERCEVAL_POLAR
+from graphix_perceval.experiment import PercevalExperiment, Photon, PhotonType
 
 
-def pattern2graphstate(pattern: graphix.Pattern) -> tuple[graphix.GraphState, dict[int, float], list[int]]:
+def pattern2graphstate(
+    pattern: graphix.Pattern,
+) -> tuple[graphix.GraphState, dict[int, float], list[int]]:
     """Create a graph state from a MBQC pattern.
 
     Parameters
