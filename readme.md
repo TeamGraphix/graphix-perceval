@@ -8,10 +8,13 @@ Provides an interface to run MBQC pattern (`graphix.Pattern`) on Quandela's opti
 Requires [graphix](https://github.com/TeamGraphix/graphix) to generate the measurement pattern.
 
 ## Installation
-<!-- install with `pip`
-```
+
+install with `pip`
+
+```bash
  $ pip install graphix-perceval
-``` -->
+```
+
 <!-- This can be installed as part of graphix, by
 ```
  $ pip install graphix[extra]
