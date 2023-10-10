@@ -1,15 +1,13 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
-with open("readme.md", "r", encoding="utf-8") as fh:
+with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 version = {}
 with open("graphix_perceval/version.py") as fp:
     exec(fp.read(), version)
 
-requirements = [
-    requirement.strip() for requirement in open("requirements.txt").readlines()
-]
+requirements = [requirement.strip() for requirement in open("requirements.txt").readlines()]
 
 info = {
     "name": "graphix_perceval",
@@ -24,9 +22,7 @@ info = {
     "long_description": long_description,
     "long_description_content_type": "text/markdown",
     "url": "https://graphix.readthedocs.io",
-    "project_urls": {
-        "Bug Tracker": "https://github.com/TeamGraphix/graphix-perceval/issues"
-    },
+    "project_urls": {"Bug Tracker": "https://github.com/TeamGraphix/graphix-perceval/issues"},
     "classifiers": [
         "Development Status :: 4 - Beta",
         "Environment :: Console",
@@ -40,7 +36,7 @@ info = {
     ],
     "python_requires": ">=3.8,<3.11",
     "install_requires": requirements,
-    "extras_require": {"test": ["graphix>=0.2"]},
+    "extras_require": {},
 }
 
 setup(**(info))
