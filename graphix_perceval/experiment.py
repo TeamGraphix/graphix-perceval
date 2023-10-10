@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import collections
 import itertools
 import sys
 import warnings
@@ -170,7 +171,21 @@ class PercevalExperiment:
             x = x + 1
         self.output_states = out_states
 
-    def get_probability_distribution(self, format_result=True, postselection=True):
+    def get_probability_distribution(self, format_result=True, postselection=True) -> PhotonDistribution:
+        r"""Get the probability distribution of the measurement results.
+
+        Parameters
+        ----------
+        format_result : bool, optional
+            whether to format the result so that only the result corresponding to the output qubit is taken out.
+        postselection : bool, optional
+            whether to postselect the results.
+
+        Returns
+        -------
+        result : PhotonDistribution
+            Probability distribution of the measurement results.
+        """
         if self.processor is None:
             raise Exception(
                 "No processor has been set. Please set a processor by `set_local_processor` or `set_remote_procesor` before running the experiment."
@@ -182,24 +197,26 @@ class PercevalExperiment:
         probs = PhotonDistribution(sampler.probs()["results"])
 
         if format_result:
-            probs = self.format_result(probs)
+            probs.replace_keys(self.output_states)
 
         return probs
 
-    def sample(self, num_samples=1024, format_result=True, postselection=True):
+    def sample(self, num_samples=1024, format_result=True, postselection=True) -> PhotonCount:
         """Run the MBQC pattern on IBMQ devices
 
         Parameters
         ----------
         num_samples : int, optional
-            the number of samples.
+            Number of samples.
         format_result : bool, optional
             whether to format the result so that only the result corresponding to the output qubit is taken out.
+        postselection : bool, optional
+            whether to postselect the results.
 
         Returns
         -------
-        result : dict
-            the measurement result.
+        result : PhotonCount
+            Measurement result.
         """
         if self.processor is None:
             raise Exception(
@@ -209,28 +226,12 @@ class PercevalExperiment:
             self.set_postselection()
 
         sampler = Sampler(self.processor)
-        sample_result = PhotonDistribution(sampler.samples(num_samples)["results"])
+        sample_result = PhotonCount(collections.Counter(sampler.samples(num_samples)["results"]))
 
         if format_result:
-            sample_result = self.format_result(sample_result)
+            sample_result.replace_keys(self.output_states)
 
         return sample_result
-
-    def format_result(self, result: PhotonDistribution) -> PhotonDistribution:
-        """Format the result to replace the dual-rail encoded qubit with logical qubit.
-
-        Returns
-        -------
-        masked_results : dict
-            Dictionary of formatted results.
-        """
-        masked_results = PhotonDistribution()
-        # Iterate over original measurement results
-        for key, value in result.items():
-            if str(key) not in self.output_states:
-                continue
-            masked_results[self.output_states[str(key)]] = value
-        return masked_results
 
     def set_postselection(self):
         """Postselect the results according to the pattern."""
@@ -253,18 +254,74 @@ class PercevalExperiment:
     def get_witness_photons(self):
         return [ph for ph in self.photons if ph.type == PhotonType.WITNESS]
 
-    def run(self):
-        if self.processor is None:
-            raise Exception(
-                "No processor has been set. Please set a processor by `set_local_processor` or `set_remote_procesor` before running the experiment."
-            )
-        if self.input_state is None:
-            self.set_input_state()
-        if self.output_states is None:
-            self.set_output_states()
 
-        ca = pcvl.algorithm.Analyzer(self.processor, input_states=self.input_state, output_states=self.output_states)
-        return ca
+class PhotonCount(dict):
+    """PhotonCount class for storing the counts of the measurement results.
+
+    perceval.BSCount does not seem to show fock state with one qubit properly."""
+
+    def __init__(self, counts: dict[str, int] = {}):
+        if not isinstance(counts, dict):
+            raise TypeError("counts must be a dictionary.")
+        super().__init__()
+        self.counts = dict(counts)
+
+    def __str__(self) -> str:
+        return str(self.counts)
+
+    def __getitem__(self, key: str) -> int:
+        if not isinstance(key, str):
+            raise TypeError("key must be a string.")
+        return self.counts[key]
+
+    def __setitem__(self, key: str, value: int):
+        if not isinstance(key, str):
+            raise TypeError("key must be a string.")
+        if not (isinstance(value, int) and value >= 0):
+            raise TypeError("value must be a positive integer.")
+        self.counts[key] = value
+
+    def items(self) -> dict_items:
+        return self.counts.items()
+
+    def draw(self, sort: bool = True):
+        """Draw the counts result in a table.
+        If the code is run in a Jupyter notebook, the table will be displayed in HTML format.
+        If the code is run in a terminal, the table will be displayed in ASCII format.
+
+        Parameters
+        ----------
+        sort : bool, optional
+            Whether to sort the counts by the key.
+        """
+        headers = ["state", "counts"]
+        d = []
+        for key, value in self.counts.items():
+            d.append([str(key), value])
+        if sort:
+            d.sort()
+        if IS_NOTEBOOK:
+            table = tabulate(d, headers=headers, tablefmt="html")
+            display(HTML(table))
+        else:
+            table = tabulate(d, headers=headers, tablefmt="pretty")
+            print(table)
+
+    def replace_keys(self, replace_dict: dict[str, str]):
+        """Replace the keys of the counts.
+
+        Parameters
+        ----------
+        replace_dict : dict
+            Dictionary of the replacement.
+        """
+        replaced = {}
+        # Iterate over original measurement results
+        for key, value in self.counts.items():
+            if str(key) not in replace_dict:
+                continue
+            replaced[replace_dict[str(key)]] = value
+        self.counts = replaced
 
 
 class PhotonDistribution(dict):
@@ -319,3 +376,19 @@ class PhotonDistribution(dict):
         else:
             table = tabulate(d, headers=headers, tablefmt="pretty")
             print(table)
+
+    def replace_keys(self, replace_dict: dict[str, str]):
+        """Replace the keys of the distribution.
+
+        Parameters
+        ----------
+        replace_dict : dict
+            Dictionary of the replacement.
+        """
+        replaced = {}
+        # Iterate over original measurement results
+        for key, value in self.distribution.items():
+            if str(key) not in replace_dict:
+                continue
+            replaced[replace_dict[str(key)]] = value
+        self.distribution = replaced

@@ -8,6 +8,39 @@ from graphix_perceval.experiment import PhotonDistribution
 
 
 class TestConverter(unittest.TestCase):
+    def test_sampling_circuit_wo_postselection(self):
+        circuit = Circuit(2)
+        circuit.h(1)
+        circuit.cnot(0, 1)
+        pattern = circuit.transpile()
+        pattern.standardize()
+        pattern.shift_signals()
+
+        exp = to_perceval(pattern)
+        exp.set_local_processor("SLOS")
+        dist = exp.sample(num_samples=1000, format_result=False, postselection=False)
+        counts = 0
+        for k, v in dist.items():
+            counts += v
+        self.assertEqual(counts, 1000)
+
+    def test_sampling_circuit_w_postselection(self):
+        circuit = Circuit(2)
+        circuit.h(1)
+        circuit.cnot(0, 1)
+        pattern = circuit.transpile()
+        pattern.standardize()
+        pattern.shift_signals()
+
+        exp = to_perceval(pattern)
+        exp.set_local_processor("SLOS")
+        dist = exp.sample(num_samples=1000)
+        counts = 0
+        for k, v in dist.items():
+            self.assertTrue(k in ["|00>", "|11>"])
+            counts += v
+        self.assertEqual(counts, 1000)
+
     def test_zero_state_creation_wo_pauli_meas(self):
         circuit = Circuit(1)  # initialize with |+>
         circuit.h(0)
