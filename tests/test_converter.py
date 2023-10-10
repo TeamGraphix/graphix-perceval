@@ -2,6 +2,7 @@ import unittest
 
 import numpy as np
 from graphix import Circuit
+
 from graphix_perceval.converter import to_perceval
 from graphix_perceval.experiment import PhotonDistribution
 
@@ -50,9 +51,7 @@ class TestConverter(unittest.TestCase):
         exp.set_local_processor("SLOS")
         dist = exp.get_probability_distribution()
 
-        ans_dist = PhotonDistribution(
-            {"|0>": np.cos(np.pi / 1.23 / 2) ** 2, "|1>": np.sin(np.pi / 1.23 / 2) ** 2}
-        )
+        ans_dist = PhotonDistribution({"|0>": np.cos(np.pi / 1.23 / 2) ** 2, "|1>": np.sin(np.pi / 1.23 / 2) ** 2})
         self.assertAlmostEqual(dist["|0>"], ans_dist["|0>"])
         self.assertAlmostEqual(dist["|1>"], ans_dist["|1>"])
         self.assertTrue(all(k in dist.keys() for k in ans_dist.keys()))

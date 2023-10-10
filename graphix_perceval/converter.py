@@ -3,7 +3,7 @@ from __future__ import annotations
 import graphix
 import perceval as pcvl
 import sympy as sp
-from graphix.extraction import Cluster, ClusterType, extract_clusters_from_graph
+from graphix.extraction import ResourceGraph, ResourceType, get_fusion_network_from_graph
 from perceval import components as comp
 
 from graphix_perceval.clifford import CLIFFORD_TO_PERCEVAL_POLAR
@@ -56,12 +56,12 @@ def to_perceval(pattern: graphix.Pattern) -> PercevalExperiment:
     if not isinstance(pattern, graphix.Pattern):
         raise TypeError("pattern must be a graphix.Pattern object")
     graph_state, phasedict, output_nodes = pattern2graphstate(pattern)
-    clusters = extract_clusters_from_graph(graph_state)
+    ResourceGraphs = get_fusion_network_from_graph(graph_state)
     vops = pattern.get_vops()
 
     pcc = PercevalCircuitConstructor()
-    for cluster in clusters:
-        pcc.add_cluster(cluster, phasedict, output_nodes)
+    for ResourceGraph in ResourceGraphs:
+        pcc.add_ResourceGraph(ResourceGraph, phasedict, output_nodes)
 
     pcc.add_fusions()
 
@@ -77,7 +77,7 @@ def to_perceval(pattern: graphix.Pattern) -> PercevalExperiment:
 class PercevalCircuitConstructor:
     def __init__(self):
         self.num_photons = 0
-        self.clusters: list[Cluster] = []
+        self.ResourceGraphs: list[ResourceGraph] = []
         self.fusion_pairs: list[tuple[Photon, Photon]] = []
         self.photons: list[Photon] = []
         self.node_id2photon_ids: dict[int, list[int]] = {}
@@ -85,10 +85,10 @@ class PercevalCircuitConstructor:
         self._is_fused: bool = False
         self._clifford_applied: bool = False
 
-    def add_cluster(self, cluster: Cluster, phasedict: dict[int, float], readouts: list) -> None:
+    def add_ResourceGraph(self, ResourceGraph: ResourceGraph, phasedict: dict[int, float], readouts: list) -> None:
         if self._is_fused:
-            raise RuntimeError("Cannot add cluster after fusion")
-        for node_id in cluster.graph.nodes:
+            raise RuntimeError("Cannot add ResourceGraph after fusion")
+        for node_id in ResourceGraph.graph.nodes:
             if node_id in readouts:
                 ph = Photon(
                     exp_id=self.num_photons, type=PhotonType.READOUT, node_id=node_id, angle=phasedict.get(node_id)
@@ -104,10 +104,10 @@ class PercevalCircuitConstructor:
             self.num_photons += 1
             self.photons.append(ph)
 
-        if cluster.type in (ClusterType.GHZ, ClusterType.LINEAR):
-            self.clusters.append(cluster)
+        if ResourceGraph.type in (ResourceType.GHZ, ResourceType.LINEAR):
+            self.ResourceGraphs.append(ResourceGraph)
         else:
-            raise TypeError(f"ClusterType {cluster.type} is not supported")
+            raise TypeError(f"ResourceType {ResourceGraph.type} is not supported")
 
     def get_readouts(self) -> list[Photon]:
         return [ph for ph in self.photons if ph.type == PhotonType.READOUT]
@@ -119,8 +119,8 @@ class PercevalCircuitConstructor:
         return [ph for ph in self.photons if ph.type == PhotonType.WITNESS]
 
     def add_fusions(self) -> None:
-        """Find edges that connects two clusters.
-        If the two clusters share a same node id, then they are fused.
+        """Find edges that connects two ResourceGraphs.
+        If the two ResourceGraphs share a same node id, then they are fused.
         Type-1 fusion.
         """
         for _, photon_ids in self.node_id2photon_ids.items():
@@ -132,8 +132,8 @@ class PercevalCircuitConstructor:
 
         self._is_fused = True
 
-    def get_all_clusters(self) -> list[Cluster]:
-        return self.ghz_clusters | self.linear_clusters
+    def get_all_ResourceGraphs(self) -> list[ResourceGraph]:
+        return self.ghz_ResourceGraphs | self.linear_ResourceGraphs
 
     def setup_perceval_circuit(self, name: str | None = None, merge: bool = False) -> pcvl.Circuit:
         if not self._is_fused:
@@ -141,16 +141,16 @@ class PercevalCircuitConstructor:
         if not self._clifford_applied:
             raise RuntimeError("Must apply local clifford before setting up perceval circuit")
         circ = pcvl.Circuit(self.num_photons * 2, name=name)
-        # Create circuits for all the clusters
+        # Create circuits for all the ResourceGraphs
         photon_idx = 0
-        for cl in self.clusters:
-            if cl.type == ClusterType.GHZ:
+        for cl in self.ResourceGraphs:
+            if cl.type == ResourceType.GHZ:
                 circ.add(
                     [idx for idx in range(photon_idx, photon_idx + len(cl.graph.nodes))],
                     ghz_circuit(len(cl.graph.nodes)),
                     merge,
                 )
-            elif cl.type == ClusterType.LINEAR:
+            elif cl.type == ResourceType.LINEAR:
                 circ.add(
                     [idx for idx in range(photon_idx, photon_idx + len(cl.graph.nodes))],
                     linear_circuit(len(cl.graph.nodes)),
@@ -267,7 +267,7 @@ def fusion_circuit(ph1: Photon, ph2: Photon) -> pcvl.Circuit:
 
 
 def linear_circuit(num_photons: int, name: str = "") -> pcvl.Circuit:
-    """Create a Perceval Circuit for a linear cluster.
+    """Create a Perceval Circuit for a linear ResourceGraph.
 
     Parameters
     ----------
@@ -277,7 +277,7 @@ def linear_circuit(num_photons: int, name: str = "") -> pcvl.Circuit:
     Returns
     -------
     perceval.Circuit
-        Perceval Circuit for a linear cluster.
+        Perceval Circuit for a linear ResourceGraph.
     """
     if not isinstance(num_photons, int):
         raise TypeError("num_photons must be an integer")
@@ -297,7 +297,7 @@ def linear_circuit(num_photons: int, name: str = "") -> pcvl.Circuit:
 
 
 def ghz_circuit(num_photons: int, name: str = "") -> pcvl.Circuit:
-    """Create a Perceval Circuit for a GHZ cluster.
+    """Create a Perceval Circuit for a GHZ ResourceGraph.
 
     Parameters
     ----------
@@ -307,7 +307,7 @@ def ghz_circuit(num_photons: int, name: str = "") -> pcvl.Circuit:
     Returns
     -------
     perceval.Circuit
-        Perceval Circuit for a GHZ cluster.
+        Perceval Circuit for a GHZ ResourceGraph.
     """
     if not isinstance(num_photons, int):
         raise TypeError("num_photons must be an integer")

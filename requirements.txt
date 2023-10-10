@@ -1,3 +1,2 @@
-# wait until graphix.extraction is added
-graphix @ git+https://github.com/TeamGraphix/graphix.git@master
+graphix>=0.2.7
 perceval-quandela>=0.9.1
