@@ -1,16 +1,16 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
-with open("readme.md", "r", encoding="utf-8") as fh:
+with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 version = {}
-with open("graphix_ibmq/version.py") as fp:
+with open("graphix_perceval/version.py") as fp:
     exec(fp.read(), version)
 
 requirements = [requirement.strip() for requirement in open("requirements.txt").readlines()]
 
 info = {
-    "name": "graphix_ibmq",
+    "name": "graphix_perceval",
     "version": version["__version__"],
     "packages": find_packages(),
     "author": "Kazuki Tsuoka, Shinichi Sunami",
@@ -18,7 +18,7 @@ info = {
     "maintainer": "Kazuki Tsuoka, Shinichi Sunami",
     "maintainer_email": "shinichi.sunami@gmail.com",
     "license": "Apache License 2.0",
-    "description": "Perceval interface for graphix library, the MBQC compiler ",
+    "description": "Perceval interface for graphix library, the MBQC compiler",
     "long_description": long_description,
     "long_description_content_type": "text/markdown",
     "url": "https://graphix.readthedocs.io",
@@ -36,7 +36,7 @@ info = {
     ],
     "python_requires": ">=3.8,<3.11",
     "install_requires": requirements,
-    "extras_require": {'test': ['graphix>=0.2']},
+    "extras_require": {},
 }
 
 setup(**(info))
