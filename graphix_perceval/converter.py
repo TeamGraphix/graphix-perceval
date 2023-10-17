@@ -61,7 +61,7 @@ def to_perceval(pattern: graphix.Pattern) -> PercevalExperiment:
 
     pcc = PercevalCircuitConstructor()
     for ResourceGraph in ResourceGraphs:
-        pcc.add_ResourceGraph(ResourceGraph, phasedict, output_nodes)
+        pcc.add_resourcegraph(ResourceGraph, phasedict, output_nodes)
 
     pcc.add_fusions()
 
