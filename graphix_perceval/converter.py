@@ -85,7 +85,7 @@ class PercevalCircuitConstructor:
         self._is_fused: bool = False
         self._clifford_applied: bool = False
 
-    def add_ResourceGraph(self, ResourceGraph: ResourceGraph, phasedict: dict[int, float], readouts: list) -> None:
+    def add_resourcegraph(self, ResourceGraph: ResourceGraph, phasedict: dict[int, float], readouts: list) -> None:
         if self._is_fused:
             raise RuntimeError("Cannot add ResourceGraph after fusion")
         for node_id in ResourceGraph.graph.nodes:
@@ -132,7 +132,7 @@ class PercevalCircuitConstructor:
 
         self._is_fused = True
 
-    def get_all_ResourceGraphs(self) -> list[ResourceGraph]:
+    def get_all_resourcegraphs(self) -> list[ResourceGraph]:
         return self.ghz_ResourceGraphs | self.linear_ResourceGraphs
 
     def setup_perceval_circuit(self, name: str | None = None, merge: bool = False) -> pcvl.Circuit:

@@ -65,8 +65,10 @@ class PercevalExperiment:
 
         Parameters
         ----------
-        pattern: :class:`graphix.Pattern` object
-            MBQC pattern to be run on the Quandela device or Perceval simulator.
+        circuit : :class:`perceval.Circuit` object
+            Perceval circuit corresponding to the pattern.
+        photons : list[:class:`Photon` object]
+            List of photons.
         """
         self.circ = circuit
         self.photons = photons
@@ -75,7 +77,7 @@ class PercevalExperiment:
         self.output_states: dict[str, str] | None = None
 
     def set_local_processor(self, backend: str, source: pcvl.Source = pcvl.Source(), name: str = None):
-        """Set the local computing backend.
+        r"""Set the local computing backend.
 
         Parameters
         ----------
@@ -98,7 +100,7 @@ class PercevalExperiment:
         self.set_output_states()
 
     def set_remote_processor(self, backend: str, token: str):
-        """Set the remote computing backend.
+        r"""Set the remote computing backend.
 
         Parameters
         ----------
@@ -120,8 +122,8 @@ class PercevalExperiment:
         self.set_output_states()
 
     def set_input_state(self):
-        """Set the input states for the processor.
-        The default input state is |{P:H}> for each photon and |0> for each ancillary mode.
+        r"""Set the input states for the processor.
+        The default input state is ``|{P:H}>`` for each photon and ``|0>`` for each ancillary mode.
         """
         if self.processor is None:
             raise Exception(
@@ -141,9 +143,9 @@ class PercevalExperiment:
         Currently, Perceval does not support feed-forward opetations,
         so we postselect the output states where
 
-        - The witness photons are in |{P:H}> and translated to |0,1>
-        - The computing photons are in |{P:H}> and translated to |0,1>
-        - The readout photons are in |{P:H}> or |{P:V}>
+        - The witness photons are in ``|{P:H}>`` and translated to ``|0,1>``
+        - The computing photons are in ``|{P:H}>`` and translated to ``|0,1>``
+        - The readout photons are in ``|{P:H}>`` or ``|{P:V}>``
         """
         if self.processor is None:
             raise Exception(
@@ -171,7 +173,9 @@ class PercevalExperiment:
             x = x + 1
         self.output_states = out_states
 
-    def get_probability_distribution(self, format_result=True, postselection=True) -> PhotonDistribution:
+    def get_probability_distribution(
+        self, format_result: bool = True, postselection: bool = True
+    ) -> PhotonDistribution:
         r"""Get the probability distribution of the measurement results.
 
         Parameters
@@ -201,7 +205,7 @@ class PercevalExperiment:
 
         return probs
 
-    def sample(self, num_samples=1024, format_result=True, postselection=True) -> PhotonCount:
+    def sample(self, num_samples=1024, format_result: bool = True, postselection: bool = True) -> PhotonCount:
         """Run the MBQC pattern on IBMQ devices
 
         Parameters
