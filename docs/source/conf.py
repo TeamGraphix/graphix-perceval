@@ -9,7 +9,7 @@ import sys
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "graphix-perceval"
-copyright = "2023, Kazuki Tsuoka, Shinichi Sunami"
+copyright = "2023, Team Graphix"
 author = "Kazuki Tsuoka, Shinichi Sunami"
 release = "0.0.1"
 
@@ -48,7 +48,6 @@ def setup(app):
 
 
 html_theme = "sphinx_rtd_theme"
-# html_theme = 'pydata_sphinx_theme'
 html_static_path = ["_static"]
 html_logo = "../logo/white_with_text.png"
 html_theme_options = {
@@ -59,6 +58,5 @@ html_theme_options = {
 sphinx_gallery_conf = {
     "examples_dirs": "../../examples/gallery",  # path to your example scripts
     "gallery_dirs": "gallery",  # path to where to save gallery generated output
-    #'expected_failing_examples': ['../../examples/ibm_device.py'],
     "filename_pattern": "/",
 }

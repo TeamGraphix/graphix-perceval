@@ -10,4 +10,4 @@ Graphix-perceval - executing MBQC patterns on Perceval devices
 
    tutorial
    gallery/index
-   references
+   reference
