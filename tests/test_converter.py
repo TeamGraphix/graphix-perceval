@@ -20,7 +20,7 @@ class TestConverter(unittest.TestCase):
         exp.set_local_processor("SLOS")
         dist = exp.sample(num_samples=1000, format_result=False, postselection=False)
         counts = 0
-        for k, v in dist.items():
+        for _, v in dist.items():
             counts += v
         self.assertEqual(counts, 1000)
 
