@@ -290,6 +290,7 @@ class PhotonCount(dict):
 
     def draw(self, sort: bool = True):
         """Draw the counts result in a table.
+
         If the code is run in a Jupyter notebook, the table will be displayed in HTML format.
         If the code is run in a terminal, the table will be displayed in ASCII format.
 
