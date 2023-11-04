@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="758.75" height="406.25" viewBox="-28.5 0 607.0 325.0">
+<defs>
+</defs>
+<path d="M10,25 L25,25" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M10,75 L25,75" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M10,125 L25,125" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M10,175 L25,175" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M10,225 L25,225" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M10,275 L25,275" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M25,25 L125,25" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M25,75 L125,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M25,125 L125,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M27.5,2.5 L122.5,2.5 L122.5,147.5 L27.5,147.5 Z" stroke="darkred" fill="lightpink" stroke-linejoin="miter" />
+<text x="35" y="24" font-size="8" text-anchor="start" font-weight="bold"><tspan x="35" dy="0em">GHZ</tspan></text>
+<path d="M128,25 L172,25" stroke="white" stroke-width="6" fill="none" />
+<path d="M125,25 L128,25 L172,25 L175,25" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M128,75 L172,75" stroke="white" stroke-width="6" fill="none" />
+<path d="M125,75 L128,75 L172,75 L175,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M128,125 L172,125" stroke="white" stroke-width="6" fill="none" />
+<path d="M125,125 L128,125 L172,125 L175,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M178,25 L222,25" stroke="white" stroke-width="6" fill="none" />
+<path d="M175,25 L178,25 L222,25 L225,25" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M178,75 L222,75" stroke="white" stroke-width="6" fill="none" />
+<path d="M175,75 L178,75 L222,75 L225,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M178,125 L222,125" stroke="white" stroke-width="6" fill="none" />
+<path d="M175,125 L178,125 L222,125 L225,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M225,75 L325,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M227.5,52.5 L322.5,52.5 L322.5,97.5 L227.5,97.5 Z" stroke="darkred" fill="lightpink" stroke-linejoin="miter" />
+<text x="235" y="82" font-size="8" text-anchor="start" font-weight="bold"><tspan x="235" dy="0em">LOCAL</tspan><tspan x="235" dy="1em">CLIFFORD</tspan><tspan x="235" dy="1em">ID:6</tspan></text>
+<path d="M225,125 L325,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M227.5,102.5 L322.5,102.5 L322.5,147.5 L227.5,147.5 Z" stroke="darkred" fill="lightpink" stroke-linejoin="miter" />
+<text x="235" y="132" font-size="8" text-anchor="start" font-weight="bold"><tspan x="235" dy="0em">LOCAL</tspan><tspan x="235" dy="1em">CLIFFORD</tspan><tspan x="235" dy="1em">ID:6</tspan></text>
+<path d="M225,25 L325,25" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M25,175 L325,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M25,225 L325,225" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M25,275 L325,275" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M328,25 L372,25" stroke="white" stroke-width="6" fill="none" />
+<path d="M325,25 L328,25 L372,25 L375,25" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M328,75 L372,75" stroke="white" stroke-width="6" fill="none" />
+<path d="M325,75 L328,75 L372,75 L375,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M328,125 L372,125" stroke="white" stroke-width="6" fill="none" />
+<path d="M325,125 L328,125 L372,125 L375,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M328,175 L372,175" stroke="white" stroke-width="6" fill="none" />
+<path d="M325,175 L328,175 L372,175 L375,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M328,225 L372,225" stroke="white" stroke-width="6" fill="none" />
+<path d="M325,225 L328,225 L372,225 L375,225" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M328,275 L372,275" stroke="white" stroke-width="6" fill="none" />
+<path d="M325,275 L328,275 L372,275 L375,275" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M378,25 L422,25" stroke="white" stroke-width="6" fill="none" />
+<path d="M375,25 L378,25 L422,25 L425,25" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M378,75 L422,125" stroke="white" stroke-width="6" fill="none" />
+<path d="M375,75 L378,75 L422,125 L425,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M378,125 L422,225" stroke="white" stroke-width="6" fill="none" />
+<path d="M375,125 L378,125 L422,225 L425,225" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M378,175 L422,75" stroke="white" stroke-width="6" fill="none" />
+<path d="M375,175 L378,175 L422,75 L425,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M378,225 L422,175" stroke="white" stroke-width="6" fill="none" />
+<path d="M375,225 L378,225 L422,175 L425,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M378,275 L422,275" stroke="white" stroke-width="6" fill="none" />
+<path d="M375,275 L378,275 L422,275 L425,275" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M425,25 L453,25 L462.5,37.5" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M487.5,37.5 L497,25 L525,25" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M425,75 L453,75 L462.5,62.5" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M487.5,62.5 L497,75 L525,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M487.5,62.5 L497,75 L525,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M450,50 L475,24 L500,50 L475,76 L450,50 Z" stroke="black" fill="gray" stroke-linejoin="miter" />
+<path d="M450,50 L500,50" stroke="black" stroke-width="1" fill="none" />
+<text x="475" y="86" font-size="7" text-anchor="middle"></text>
+<path d="M425,125 L453,125 L462.5,137.5" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M487.5,137.5 L497,125 L525,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M425,175 L453,175 L462.5,162.5" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M487.5,162.5 L497,175 L525,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M487.5,162.5 L497,175 L525,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M450,150 L475,124 L500,150 L475,176 L450,150 Z" stroke="black" fill="gray" stroke-linejoin="miter" />
+<path d="M450,150 L500,150" stroke="black" stroke-width="1" fill="none" />
+<text x="475" y="186" font-size="7" text-anchor="middle"></text>
+<path d="M425,225 L453,225 L462.5,237.5" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M487.5,237.5 L497,225 L525,225" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M425,275 L453,275 L462.5,262.5" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M487.5,262.5 L497,275 L525,275" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M487.5,262.5 L497,275 L525,275" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M450,250 L475,224 L500,250 L475,276 L450,250 Z" stroke="black" fill="gray" stroke-linejoin="miter" />
+<path d="M450,250 L500,250" stroke="black" stroke-width="1" fill="none" />
+<text x="475" y="286" font-size="7" text-anchor="middle"></text>
+<path d="M525,25 L540,25" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M525,75 L540,75" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M525,125 L540,125" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M525,175 L540,175" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M525,225 L540,225" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M525,275 L540,275" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<text x="550" y="28" font-size="7" text-anchor="end">0</text>
+<text x="550" y="78" font-size="7" text-anchor="end">1</text>
+<text x="550" y="128" font-size="7" text-anchor="end">2</text>
+<text x="550" y="178" font-size="7" text-anchor="end">3</text>
+<text x="550" y="228" font-size="7" text-anchor="end">4</text>
+<text x="550" y="278" font-size="7" text-anchor="end">5</text>
+<text x="0" y="28" font-size="7" text-anchor="start">0</text>
+<text x="0" y="78" font-size="7" text-anchor="start">1</text>
+<text x="0" y="128" font-size="7" text-anchor="start">2</text>
+<text x="0" y="178" font-size="7" text-anchor="start">3</text>
+<text x="0" y="228" font-size="7" text-anchor="start">4</text>
+<text x="0" y="278" font-size="7" text-anchor="start">5</text>
+</svg>

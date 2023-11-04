@@ -56,7 +56,7 @@ html_theme_options = {
 }
 
 sphinx_gallery_conf = {
-    "examples_dirs": "../../examples/gallery",  # path to your example scripts
+    "examples_dirs": "../../examples",  # path to your example scripts
     "gallery_dirs": "gallery",  # path to where to save gallery generated output
     "filename_pattern": "/",
 }
