@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="758.75" height="406.25" viewBox="-28.5 0 607.0 325.0">
+     width="1150.0" height="781.25" viewBox="-35.0 0 920.0 625.0">
 <defs>
 </defs>
 <path d="M10,25 L25,25" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
@@ -9,97 +9,231 @@
 <path d="M10,175 L25,175" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
 <path d="M10,225 L25,225" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
 <path d="M10,275 L25,275" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M10,325 L25,325" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M10,375 L25,375" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M10,425 L25,425" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M10,475 L25,475" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M10,525 L25,525" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M10,575 L25,575" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
 <path d="M25,25 L125,25" stroke="darkred" stroke-width="3" fill="none" />
 <path d="M25,75 L125,75" stroke="darkred" stroke-width="3" fill="none" />
 <path d="M25,125 L125,125" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M27.5,2.5 L122.5,2.5 L122.5,147.5 L27.5,147.5 Z" stroke="darkred" fill="lightpink" stroke-linejoin="miter" />
+<path d="M25,175 L125,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M27.5,2.5 L122.5,2.5 L122.5,197.5 L27.5,197.5 Z" stroke="darkred" fill="lightpink" stroke-linejoin="miter" />
 <text x="35" y="24" font-size="8" text-anchor="start" font-weight="bold"><tspan x="35" dy="0em">GHZ</tspan></text>
+<path d="M25,225 L125,225" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M25,275 L125,275" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M27.5,202.5 L122.5,202.5 L122.5,297.5 L27.5,297.5 Z" stroke="darkred" fill="lightpink" stroke-linejoin="miter" />
+<text x="35" y="224" font-size="8" text-anchor="start" font-weight="bold"><tspan x="35" dy="0em">GHZ</tspan></text>
 <path d="M128,25 L172,25" stroke="white" stroke-width="6" fill="none" />
 <path d="M125,25 L128,25 L172,25 L175,25" stroke="darkred" stroke-width="3" fill="none" />
 <path d="M128,75 L172,75" stroke="white" stroke-width="6" fill="none" />
 <path d="M125,75 L128,75 L172,75 L175,75" stroke="darkred" stroke-width="3" fill="none" />
 <path d="M128,125 L172,125" stroke="white" stroke-width="6" fill="none" />
 <path d="M125,125 L128,125 L172,125 L175,125" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M178,25 L222,25" stroke="white" stroke-width="6" fill="none" />
-<path d="M175,25 L178,25 L222,25 L225,25" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M178,75 L222,75" stroke="white" stroke-width="6" fill="none" />
-<path d="M175,75 L178,75 L222,75 L225,75" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M178,125 L222,125" stroke="white" stroke-width="6" fill="none" />
-<path d="M175,125 L178,125 L222,125 L225,125" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M225,75 L325,75" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M227.5,52.5 L322.5,52.5 L322.5,97.5 L227.5,97.5 Z" stroke="darkred" fill="lightpink" stroke-linejoin="miter" />
-<text x="235" y="82" font-size="8" text-anchor="start" font-weight="bold"><tspan x="235" dy="0em">LOCAL</tspan><tspan x="235" dy="1em">CLIFFORD</tspan><tspan x="235" dy="1em">ID:6</tspan></text>
-<path d="M225,125 L325,125" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M227.5,102.5 L322.5,102.5 L322.5,147.5 L227.5,147.5 Z" stroke="darkred" fill="lightpink" stroke-linejoin="miter" />
-<text x="235" y="132" font-size="8" text-anchor="start" font-weight="bold"><tspan x="235" dy="0em">LOCAL</tspan><tspan x="235" dy="1em">CLIFFORD</tspan><tspan x="235" dy="1em">ID:6</tspan></text>
-<path d="M225,25 L325,25" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M25,175 L325,175" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M25,225 L325,225" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M25,275 L325,275" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M328,25 L372,25" stroke="white" stroke-width="6" fill="none" />
-<path d="M325,25 L328,25 L372,25 L375,25" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M328,75 L372,75" stroke="white" stroke-width="6" fill="none" />
-<path d="M325,75 L328,75 L372,75 L375,75" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M328,125 L372,125" stroke="white" stroke-width="6" fill="none" />
-<path d="M325,125 L328,125 L372,125 L375,125" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M328,175 L372,175" stroke="white" stroke-width="6" fill="none" />
-<path d="M325,175 L328,175 L372,175 L375,175" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M328,225 L372,225" stroke="white" stroke-width="6" fill="none" />
-<path d="M325,225 L328,225 L372,225 L375,225" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M328,275 L372,275" stroke="white" stroke-width="6" fill="none" />
-<path d="M325,275 L328,275 L372,275 L375,275" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M128,175 L172,175" stroke="white" stroke-width="6" fill="none" />
+<path d="M125,175 L128,175 L172,175 L175,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M128,225 L172,225" stroke="white" stroke-width="6" fill="none" />
+<path d="M125,225 L128,225 L172,225 L175,225" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M128,275 L172,275" stroke="white" stroke-width="6" fill="none" />
+<path d="M125,275 L128,275 L172,275 L175,275" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M175,125 L275,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M175,175 L275,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M175,225 L275,225" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M175,275 L275,275" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M177.5,102.5 L272.5,102.5 L272.5,297.5 L177.5,297.5 Z" stroke="darkred" fill="lightpink" stroke-linejoin="miter" />
+<text x="185" y="124" font-size="8" text-anchor="start" font-weight="bold"><tspan x="185" dy="0em">FUSE</tspan><tspan x="185" dy="1em">2-5</tspan></text>
+<path d="M275,175 L375,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M275,225 L375,225" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M277.5,152.5 L372.5,152.5 L372.5,247.5 L277.5,247.5 Z" stroke="darkred" fill="lightpink" stroke-linejoin="miter" />
+<text x="285" y="174" font-size="8" text-anchor="start" font-weight="bold"><tspan x="285" dy="0em">FUSE</tspan><tspan x="285" dy="1em">3-4</tspan></text>
+<path d="M175,25 L375,25" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M175,75 L375,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M275,125 L375,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M275,275 L375,275" stroke="darkred" stroke-width="3" fill="none" />
 <path d="M378,25 L422,25" stroke="white" stroke-width="6" fill="none" />
 <path d="M375,25 L378,25 L422,25 L425,25" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M378,75 L422,125" stroke="white" stroke-width="6" fill="none" />
-<path d="M375,75 L378,75 L422,125 L425,125" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M378,125 L422,225" stroke="white" stroke-width="6" fill="none" />
-<path d="M375,125 L378,125 L422,225 L425,225" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M378,175 L422,75" stroke="white" stroke-width="6" fill="none" />
-<path d="M375,175 L378,175 L422,75 L425,75" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M378,225 L422,175" stroke="white" stroke-width="6" fill="none" />
-<path d="M375,225 L378,225 L422,175 L425,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M378,75 L422,75" stroke="white" stroke-width="6" fill="none" />
+<path d="M375,75 L378,75 L422,75 L425,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M378,125 L422,125" stroke="white" stroke-width="6" fill="none" />
+<path d="M375,125 L378,125 L422,125 L425,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M378,175 L422,175" stroke="white" stroke-width="6" fill="none" />
+<path d="M375,175 L378,175 L422,175 L425,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M378,225 L422,225" stroke="white" stroke-width="6" fill="none" />
+<path d="M375,225 L378,225 L422,225 L425,225" stroke="darkred" stroke-width="3" fill="none" />
 <path d="M378,275 L422,275" stroke="white" stroke-width="6" fill="none" />
 <path d="M375,275 L378,275 L422,275 L425,275" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M425,25 L453,25 L462.5,37.5" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M487.5,37.5 L497,25 L525,25" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M425,75 L453,75 L462.5,62.5" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M487.5,62.5 L497,75 L525,75" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M487.5,62.5 L497,75 L525,75" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M450,50 L475,24 L500,50 L475,76 L450,50 Z" stroke="black" fill="gray" stroke-linejoin="miter" />
-<path d="M450,50 L500,50" stroke="black" stroke-width="1" fill="none" />
-<text x="475" y="86" font-size="7" text-anchor="middle"></text>
-<path d="M425,125 L453,125 L462.5,137.5" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M487.5,137.5 L497,125 L525,125" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M425,175 L453,175 L462.5,162.5" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M487.5,162.5 L497,175 L525,175" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M487.5,162.5 L497,175 L525,175" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M450,150 L475,124 L500,150 L475,176 L450,150 Z" stroke="black" fill="gray" stroke-linejoin="miter" />
-<path d="M450,150 L500,150" stroke="black" stroke-width="1" fill="none" />
-<text x="475" y="186" font-size="7" text-anchor="middle"></text>
-<path d="M425,225 L453,225 L462.5,237.5" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M487.5,237.5 L497,225 L525,225" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M425,275 L453,275 L462.5,262.5" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M487.5,262.5 L497,275 L525,275" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M487.5,262.5 L497,275 L525,275" stroke="darkred" stroke-width="3" fill="none" />
-<path d="M450,250 L475,224 L500,250 L475,276 L450,250 Z" stroke="black" fill="gray" stroke-linejoin="miter" />
-<path d="M450,250 L500,250" stroke="black" stroke-width="1" fill="none" />
-<text x="475" y="286" font-size="7" text-anchor="middle"></text>
-<path d="M525,25 L540,25" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
-<path d="M525,75 L540,75" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
-<path d="M525,125 L540,125" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
-<path d="M525,175 L540,175" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
-<path d="M525,225 L540,225" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
-<path d="M525,275 L540,275" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
-<text x="550" y="28" font-size="7" text-anchor="end">0</text>
-<text x="550" y="78" font-size="7" text-anchor="end">1</text>
-<text x="550" y="128" font-size="7" text-anchor="end">2</text>
-<text x="550" y="178" font-size="7" text-anchor="end">3</text>
-<text x="550" y="228" font-size="7" text-anchor="end">4</text>
-<text x="550" y="278" font-size="7" text-anchor="end">5</text>
-<text x="0" y="28" font-size="7" text-anchor="start">0</text>
-<text x="0" y="78" font-size="7" text-anchor="start">1</text>
-<text x="0" y="128" font-size="7" text-anchor="start">2</text>
-<text x="0" y="178" font-size="7" text-anchor="start">3</text>
-<text x="0" y="228" font-size="7" text-anchor="start">4</text>
-<text x="0" y="278" font-size="7" text-anchor="start">5</text>
+<path d="M425,25 L525,25" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M427.5,2.5 L522.5,2.5 L522.5,47.5 L427.5,47.5 Z" stroke="darkred" fill="lightpink" stroke-linejoin="miter" />
+<text x="435" y="32" font-size="8" text-anchor="start" font-weight="bold"><tspan x="435" dy="0em">LOCAL</tspan><tspan x="435" dy="1em">CLIFFORD</tspan><tspan x="435" dy="1em">ID:4</tspan></text>
+<path d="M425,175 L525,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M427.5,152.5 L522.5,152.5 L522.5,197.5 L427.5,197.5 Z" stroke="darkred" fill="lightpink" stroke-linejoin="miter" />
+<text x="435" y="182" font-size="8" text-anchor="start" font-weight="bold"><tspan x="435" dy="0em">LOCAL</tspan><tspan x="435" dy="1em">CLIFFORD</tspan><tspan x="435" dy="1em">ID:19</tspan></text>
+<path d="M425,75 L525,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M427.5,52.5 L522.5,52.5 L522.5,97.5 L427.5,97.5 Z" stroke="darkred" fill="lightpink" stroke-linejoin="miter" />
+<text x="435" y="82" font-size="8" text-anchor="start" font-weight="bold"><tspan x="435" dy="0em">LOCAL</tspan><tspan x="435" dy="1em">CLIFFORD</tspan><tspan x="435" dy="1em">ID:4</tspan></text>
+<path d="M425,125 L525,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M427.5,102.5 L522.5,102.5 L522.5,147.5 L427.5,147.5 Z" stroke="darkred" fill="lightpink" stroke-linejoin="miter" />
+<text x="435" y="132" font-size="8" text-anchor="start" font-weight="bold"><tspan x="435" dy="0em">LOCAL</tspan><tspan x="435" dy="1em">CLIFFORD</tspan><tspan x="435" dy="1em">ID:19</tspan></text>
+<path d="M425,225 L525,225" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M425,275 L525,275" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M25,325 L525,325" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M25,375 L525,375" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M25,425 L525,425" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M25,475 L525,475" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M25,525 L525,525" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M25,575 L525,575" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M528,25 L572,25" stroke="white" stroke-width="6" fill="none" />
+<path d="M525,25 L528,25 L572,25 L575,25" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M528,75 L572,75" stroke="white" stroke-width="6" fill="none" />
+<path d="M525,75 L528,75 L572,75 L575,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M528,125 L572,125" stroke="white" stroke-width="6" fill="none" />
+<path d="M525,125 L528,125 L572,125 L575,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M528,175 L572,175" stroke="white" stroke-width="6" fill="none" />
+<path d="M525,175 L528,175 L572,175 L575,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M528,225 L572,225" stroke="white" stroke-width="6" fill="none" />
+<path d="M525,225 L528,225 L572,225 L575,225" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M528,275 L572,275" stroke="white" stroke-width="6" fill="none" />
+<path d="M525,275 L528,275 L572,275 L575,275" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M528,325 L572,325" stroke="white" stroke-width="6" fill="none" />
+<path d="M525,325 L528,325 L572,325 L575,325" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M528,375 L572,375" stroke="white" stroke-width="6" fill="none" />
+<path d="M525,375 L528,375 L572,375 L575,375" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M528,425 L572,425" stroke="white" stroke-width="6" fill="none" />
+<path d="M525,425 L528,425 L572,425 L575,425" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M528,475 L572,475" stroke="white" stroke-width="6" fill="none" />
+<path d="M525,475 L528,475 L572,475 L575,475" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M528,525 L572,525" stroke="white" stroke-width="6" fill="none" />
+<path d="M525,525 L528,525 L572,525 L575,525" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M528,575 L572,575" stroke="white" stroke-width="6" fill="none" />
+<path d="M525,575 L528,575 L572,575 L575,575" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M575,25 L625,25" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M588,7 L602,7 L602,43 L588,43 Z" stroke="black" fill="gray" stroke-linejoin="miter" />
+<path d="M595,7 L595,43" stroke="black" stroke-width="1" fill="none" />
+<text x="603.5" y="36" font-size="7" text-anchor="start">ξ=pi/4</text>
+<text x="603.5" y="45" font-size="7" text-anchor="start">δ=pi/4</text>
+<path d="M625,25 L675,25" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M638,7 L652,7 L652,43 L638,43 Z" stroke="black" fill="gray" stroke-linejoin="miter" />
+<path d="M645,7 L645,43" stroke="black" stroke-width="1" fill="none" />
+<text x="653.5" y="36" font-size="7" text-anchor="start">ξ=0.1875*pi</text>
+<text x="653.5" y="45" font-size="7" text-anchor="start">δ=pi/2</text>
+<path d="M575,75 L675,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M575,125 L675,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M575,175 L675,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M575,225 L675,225" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M575,275 L675,275" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M575,325 L675,325" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M575,375 L675,375" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M575,425 L675,425" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M575,475 L675,475" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M575,525 L675,525" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M575,575 L675,575" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M678,25 L722,25" stroke="white" stroke-width="6" fill="none" />
+<path d="M675,25 L678,25 L722,25 L725,25" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M678,75 L722,125" stroke="white" stroke-width="6" fill="none" />
+<path d="M675,75 L678,75 L722,125 L725,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M678,125 L722,225" stroke="white" stroke-width="6" fill="none" />
+<path d="M675,125 L678,125 L722,225 L725,225" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M678,175 L722,325" stroke="white" stroke-width="6" fill="none" />
+<path d="M675,175 L678,175 L722,325 L725,325" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M678,225 L722,425" stroke="white" stroke-width="6" fill="none" />
+<path d="M675,225 L678,225 L722,425 L725,425" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M678,275 L722,525" stroke="white" stroke-width="6" fill="none" />
+<path d="M675,275 L678,275 L722,525 L725,525" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M678,325 L722,75" stroke="white" stroke-width="6" fill="none" />
+<path d="M675,325 L678,325 L722,75 L725,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M678,375 L722,175" stroke="white" stroke-width="6" fill="none" />
+<path d="M675,375 L678,375 L722,175 L725,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M678,425 L722,275" stroke="white" stroke-width="6" fill="none" />
+<path d="M675,425 L678,425 L722,275 L725,275" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M678,475 L722,375" stroke="white" stroke-width="6" fill="none" />
+<path d="M675,475 L678,475 L722,375 L725,375" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M678,525 L722,475" stroke="white" stroke-width="6" fill="none" />
+<path d="M675,525 L678,525 L722,475 L725,475" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M678,575 L722,575" stroke="white" stroke-width="6" fill="none" />
+<path d="M675,575 L678,575 L722,575 L725,575" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M725,25 L753,25 L762.5,37.5" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M787.5,37.5 L797,25 L825,25" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M725,75 L753,75 L762.5,62.5" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M787.5,62.5 L797,75 L825,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M787.5,62.5 L797,75 L825,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M750,50 L775,24 L800,50 L775,76 L750,50 Z" stroke="black" fill="gray" stroke-linejoin="miter" />
+<path d="M750,50 L800,50" stroke="black" stroke-width="1" fill="none" />
+<text x="775" y="86" font-size="7" text-anchor="middle"></text>
+<path d="M725,125 L753,125 L762.5,137.5" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M787.5,137.5 L797,125 L825,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M725,175 L753,175 L762.5,162.5" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M787.5,162.5 L797,175 L825,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M787.5,162.5 L797,175 L825,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M750,150 L775,124 L800,150 L775,176 L750,150 Z" stroke="black" fill="gray" stroke-linejoin="miter" />
+<path d="M750,150 L800,150" stroke="black" stroke-width="1" fill="none" />
+<text x="775" y="186" font-size="7" text-anchor="middle"></text>
+<path d="M725,225 L753,225 L762.5,237.5" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M787.5,237.5 L797,225 L825,225" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M725,275 L753,275 L762.5,262.5" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M787.5,262.5 L797,275 L825,275" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M787.5,262.5 L797,275 L825,275" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M750,250 L775,224 L800,250 L775,276 L750,250 Z" stroke="black" fill="gray" stroke-linejoin="miter" />
+<path d="M750,250 L800,250" stroke="black" stroke-width="1" fill="none" />
+<text x="775" y="286" font-size="7" text-anchor="middle"></text>
+<path d="M725,325 L753,325 L762.5,337.5" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M787.5,337.5 L797,325 L825,325" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M725,375 L753,375 L762.5,362.5" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M787.5,362.5 L797,375 L825,375" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M787.5,362.5 L797,375 L825,375" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M750,350 L775,324 L800,350 L775,376 L750,350 Z" stroke="black" fill="gray" stroke-linejoin="miter" />
+<path d="M750,350 L800,350" stroke="black" stroke-width="1" fill="none" />
+<text x="775" y="386" font-size="7" text-anchor="middle"></text>
+<path d="M725,425 L753,425 L762.5,437.5" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M787.5,437.5 L797,425 L825,425" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M725,475 L753,475 L762.5,462.5" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M787.5,462.5 L797,475 L825,475" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M787.5,462.5 L797,475 L825,475" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M750,450 L775,424 L800,450 L775,476 L750,450 Z" stroke="black" fill="gray" stroke-linejoin="miter" />
+<path d="M750,450 L800,450" stroke="black" stroke-width="1" fill="none" />
+<text x="775" y="486" font-size="7" text-anchor="middle"></text>
+<path d="M725,525 L753,525 L762.5,537.5" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M787.5,537.5 L797,525 L825,525" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M725,575 L753,575 L762.5,562.5" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M787.5,562.5 L797,575 L825,575" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M787.5,562.5 L797,575 L825,575" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M750,550 L775,524 L800,550 L775,576 L750,550 Z" stroke="black" fill="gray" stroke-linejoin="miter" />
+<path d="M750,550 L800,550" stroke="black" stroke-width="1" fill="none" />
+<text x="775" y="586" font-size="7" text-anchor="middle"></text>
+<path d="M825,25 L840,25" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M825,75 L840,75" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M825,125 L840,125" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M825,175 L840,175" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M825,225 L840,225" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M825,275 L840,275" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M825,325 L840,325" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M825,375 L840,375" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M825,425 L840,425" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M825,475 L840,475" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M825,525 L840,525" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M825,575 L840,575" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<text x="850" y="28" font-size="10" text-anchor="end">0</text>
+<text x="850" y="78" font-size="10" text-anchor="end">1</text>
+<text x="850" y="128" font-size="10" text-anchor="end">2</text>
+<text x="850" y="178" font-size="10" text-anchor="end">3</text>
+<text x="850" y="228" font-size="10" text-anchor="end">4</text>
+<text x="850" y="278" font-size="10" text-anchor="end">5</text>
+<text x="850" y="328" font-size="10" text-anchor="end">6</text>
+<text x="850" y="378" font-size="10" text-anchor="end">7</text>
+<text x="850" y="428" font-size="10" text-anchor="end">8</text>
+<text x="850" y="478" font-size="10" text-anchor="end">9</text>
+<text x="850" y="528" font-size="10" text-anchor="end">10</text>
+<text x="850" y="578" font-size="10" text-anchor="end">11</text>
+<text x="0" y="28" font-size="10" text-anchor="start">0</text>
+<text x="0" y="78" font-size="10" text-anchor="start">1</text>
+<text x="0" y="128" font-size="10" text-anchor="start">2</text>
+<text x="0" y="178" font-size="10" text-anchor="start">3</text>
+<text x="0" y="228" font-size="10" text-anchor="start">4</text>
+<text x="0" y="278" font-size="10" text-anchor="start">5</text>
+<text x="0" y="328" font-size="10" text-anchor="start">6</text>
+<text x="0" y="378" font-size="10" text-anchor="start">7</text>
+<text x="0" y="428" font-size="10" text-anchor="start">8</text>
+<text x="0" y="478" font-size="10" text-anchor="start">9</text>
+<text x="0" y="528" font-size="10" text-anchor="start">10</text>
+<text x="0" y="578" font-size="10" text-anchor="start">11</text>
 </svg>
