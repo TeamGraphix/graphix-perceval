@@ -24,8 +24,6 @@ Generating MBQC Pattern
 -----------------------
 
 We first generate a MBQC pattern using ``graphix`` library.
-We create GHZ state as an example.
-
 First, let us import relevant modules and define function we will use:
 
 .. code-block:: python
@@ -36,21 +34,20 @@ First, let us import relevant modules and define function we will use:
     import networkx as nx
 
 
-    # define the functions required for GHZ state generation
-    def ghz(circuit: Circuit):
-        """generate GHZ circuit"""
+    # define a simple circuit
+    def simple_circ(circuit: Circuit):
         circuit.h(1)
         circuit.h(2)
         circuit.cnot(0, 1)
         circuit.cnot(0, 2)
 
-Then we define a circuit to create GHZ state.
+Then we define a circuit:
 
 .. code-block:: python
 
     # generate the GHZ state generation pattern
     circuit = Circuit(3)
-    ghz(circuit)
+    simple_circ(circuit)
     pattern = circuit.transpile()
 
     # plot the pattern
@@ -65,7 +62,7 @@ Then we define a circuit to create GHZ state.
 
 .. figure:: ./_static/img/ghz_pattern.png
     :scale: 85 %
-    :alt: 2-qubit GHZ pattern visualization
+    :alt: 2-qubit pattern visualization
 
 Pattern-to-circuit conversion
 -----------------------------
@@ -82,7 +79,7 @@ Now let us convert the pattern into a circuit using the `graphix-perceval` libra
 
 .. figure:: ./_static/img/ghz_circuit.svg
     :scale: 85 %
-    :alt: 2-qubit GHZ circuit visualization
+    :alt: 2-qubit pattern visualization
 
 Running pattern on Perceval simulator
 -------------------------------------
