@@ -23,8 +23,8 @@ If you have not installed `graphix` yet, you can install it using `pip` as well:
 Generating MBQC Pattern
 -----------------------
 
-We first generate a MBQC pattern using ``graphix`` library.
-First, let us import relevant modules and define function we will use:
+We first generate an MBQC pattern using ``graphix`` library.
+First, let us import relevant modules and define the function we will use:
 
 .. code-block:: python
 
@@ -84,7 +84,7 @@ Now let us convert the pattern into a circuit using the `graphix-perceval` libra
 Running pattern on Perceval simulator
 -------------------------------------
 
-By running the Perceval's computing backends, We can obtain the probability distribution of the measurement outcomes
+By running Perceval's computing backends, we can obtain the probability distribution of the measurement outcomes
 
 .. code-block:: python
 
