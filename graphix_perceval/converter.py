@@ -3,7 +3,11 @@ from __future__ import annotations
 import graphix
 import perceval as pcvl
 import sympy as sp
-from graphix.extraction import ResourceGraph, ResourceType, get_fusion_network_from_graph
+from graphix.extraction import (
+    ResourceGraph,
+    ResourceType,
+    get_fusion_network_from_graph,
+)
 from perceval import components as comp
 
 from graphix_perceval.clifford import CLIFFORD_TO_PERCEVAL_POLAR
@@ -34,7 +38,7 @@ def pattern2graphstate(
     graph_state = graphix.GraphState(nodes=nodes, edges=edges, vops=vop_init)
     phasedict = {}
     for command in pattern.get_measurement_commands():
-        phasedict[command[1]] = command[3]
+        phasedict[command.node] = command.angle
 
     output_nodes = pattern.output_nodes
     return graph_state, phasedict, output_nodes
