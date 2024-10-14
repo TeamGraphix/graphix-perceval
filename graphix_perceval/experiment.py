@@ -4,11 +4,11 @@ import collections
 import itertools
 import sys
 import warnings
+from _collections_abc import dict_items
 from enum import Enum
 
 import perceval as pcvl
 import sympy as sp
-from _collections_abc import dict_items
 from perceval.algorithm import Sampler
 from perceval.utils import PostSelect
 from tabulate import tabulate
