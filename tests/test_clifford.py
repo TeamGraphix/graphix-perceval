@@ -1,10 +1,13 @@
 import unittest
 
-from graphix.clifford import CLIFFORD
-from graphix_perceval.clifford import CLIFFORD_TO_PERCEVAL_BS, CLIFFORD_TO_PERCEVAL_POLAR
-from sympy import matrix2numpy
 import numpy as np
 import perceval as pcvl
+from graphix.clifford import CLIFFORD
+from graphix_perceval.clifford import (
+    CLIFFORD_TO_PERCEVAL_BS,
+    CLIFFORD_TO_PERCEVAL_POLAR,
+)
+from sympy import matrix2numpy
 
 
 class TestConverter(unittest.TestCase):

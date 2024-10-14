@@ -2,7 +2,6 @@ import unittest
 
 import numpy as np
 from graphix import Circuit
-
 from graphix_perceval.converter import to_perceval
 from graphix_perceval.experiment import PhotonDistribution
 
@@ -12,7 +11,7 @@ class TestConverter(unittest.TestCase):
         circuit = Circuit(2)
         circuit.h(1)
         circuit.cnot(0, 1)
-        pattern = circuit.transpile()
+        pattern = circuit.transpile().pattern
         pattern.standardize()
         pattern.shift_signals()
 
@@ -28,7 +27,7 @@ class TestConverter(unittest.TestCase):
         circuit = Circuit(2)
         circuit.h(1)
         circuit.cnot(0, 1)
-        pattern = circuit.transpile()
+        pattern = circuit.transpile().pattern
         pattern.standardize()
         pattern.shift_signals()
 
@@ -44,7 +43,7 @@ class TestConverter(unittest.TestCase):
     def test_zero_state_creation_wo_pauli_meas(self):
         circuit = Circuit(1)  # initialize with |+>
         circuit.h(0)
-        pattern = circuit.transpile()
+        pattern = circuit.transpile().pattern
         pattern.standardize()
         pattern.shift_signals()
 
@@ -60,7 +59,7 @@ class TestConverter(unittest.TestCase):
         circuit = Circuit(1)  # initialize with |+>
         circuit.h(0)
         circuit.x(0)
-        pattern = circuit.transpile()
+        pattern = circuit.transpile().pattern
         pattern.standardize()
         pattern.shift_signals()
 
@@ -76,7 +75,7 @@ class TestConverter(unittest.TestCase):
         circuit = Circuit(1)  # initialize with |+>
         circuit.h(0)
         circuit.rx(0, np.pi / 1.23)
-        pattern = circuit.transpile()
+        pattern = circuit.transpile().pattern
         pattern.standardize()
         pattern.shift_signals()
 
@@ -93,7 +92,7 @@ class TestConverter(unittest.TestCase):
         circuit = Circuit(2)  # initialize with |+> \otimes |+>
         circuit.h(1)
         circuit.cnot(0, 1)
-        pattern = circuit.transpile()
+        pattern = circuit.transpile().pattern
         pattern.standardize()
         pattern.shift_signals()
 
@@ -110,7 +109,7 @@ class TestConverter(unittest.TestCase):
         circuit = Circuit(2)  # initialize with |+> \otimes |+>
         circuit.h(1)
         circuit.cnot(0, 1)
-        pattern = circuit.transpile()
+        pattern = circuit.transpile().pattern
         pattern.standardize()
         pattern.shift_signals()
         pattern.perform_pauli_measurements()
@@ -130,7 +129,7 @@ class TestConverter(unittest.TestCase):
         circuit.h(2)
         circuit.cnot(0, 1)
         circuit.cnot(1, 2)
-        pattern = circuit.transpile()
+        pattern = circuit.transpile().pattern
         pattern.standardize()
         pattern.shift_signals()
         pattern.perform_pauli_measurements()
@@ -149,7 +148,7 @@ class TestConverter(unittest.TestCase):
         circuit.h(1)
         circuit.cnot(0, 1)
         circuit.ry(1, np.pi / 4)
-        pattern = circuit.transpile()
+        pattern = circuit.transpile().pattern
         pattern.standardize()
         pattern.shift_signals()
         pattern.perform_pauli_measurements()
