@@ -198,11 +198,9 @@ class PercevalExperiment:
             self.set_postselection()
 
         sampler = Sampler(self.processor)
-        probs = PhotonDistribution(sampler.probs()["results"])
-
-        if format_result:
-            probs.replace_keys(self.output_states)
-
+        sampler.add_iteration()  
+        sampler.sample_count(10000)
+        probs = sampler.probs()
         return probs
 
     def sample(self, num_samples=1024, format_result: bool = True, postselection: bool = True) -> PhotonCount:
@@ -241,11 +239,18 @@ class PercevalExperiment:
         """Postselect the results according to the pattern."""
         ps = PostSelect()
         for ph in self.get_readout_photons():
-            ps.eq([2 * ph.id, 2 * ph.id + 1], 1)
+            ps_ = PostSelect(f"[{2*ph.id}, {2*ph.id + 1}] == 1")
+            ps.merge(ps_)
         for ph in self.get_compute_photons():
-            ps.eq([2 * ph.id], 0).eq([2 * ph.id + 1], 1)
+            ps_ = PostSelect(f"[{2*ph.id}] == 0")
+            ps.merge(ps_)
+            ps_ = PostSelect(f"[{2*ph.id + 1}] == 1")
+            ps.merge(ps_)
         for ph in self.get_witness_photons():
-            ps.eq([2 * ph.id], 0).eq([2 * ph.id + 1], 1)
+            ps_ = PostSelect(f"[{2*ph.id}] == 0")
+            ps.merge(ps_)
+            ps_ = PostSelect(f"[{2*ph.id + 1}] == 1")
+            ps.merge(ps_)
 
         self.processor.set_postselection(ps)
 
