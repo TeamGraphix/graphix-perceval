@@ -31,11 +31,12 @@ info = {
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
         "License :: OSI Approved :: Apache Software License",
         "Operating System :: OS Independent",
         "Topic :: Scientific/Engineering :: Physics",
     ],
-    "python_requires": ">=3.9,<3.13",
+    "python_requires": ">=3.9,<3.14",
     "install_requires": requirements,
     "extras_require": {},
 }
