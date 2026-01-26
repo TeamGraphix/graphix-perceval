@@ -3,7 +3,13 @@ from __future__ import annotations
 import graphix
 import perceval as pcvl
 import sympy as sp
-from graphix.extraction import ResourceGraph, ResourceType, get_fusion_network_from_graph
+from graphix.clifford import Clifford
+from graphix.command import M
+from graphix.extraction import (
+    ResourceGraph,
+    ResourceType,
+    get_fusion_network_from_graph,
+)
 from perceval import components as comp
 
 from graphix_perceval.clifford import CLIFFORD_TO_PERCEVAL_POLAR
@@ -29,12 +35,15 @@ def pattern2graphstate(
     output_nodes : list
         List of output nodes.
     """
-    nodes, edges = pattern.get_graph()
+    graph = pattern.extract_graph()
+    nodes = list(graph.nodes())
+    edges = list(graph.edges())
     vop_init = pattern.get_vops()
     graph_state = graphix.GraphState(nodes=nodes, edges=edges, vops=vop_init)
     phasedict = {}
-    for command in pattern.get_measurement_commands():
-        phasedict[command[1]] = command[3]
+    for command in pattern:
+        if isinstance(command, M):
+            phasedict[command.node] = command.angle
 
     output_nodes = pattern.output_nodes
     return graph_state, phasedict, output_nodes
@@ -104,10 +113,10 @@ class PercevalCircuitConstructor:
             self.num_photons += 1
             self.photons.append(ph)
 
-        if ResourceGraph.type in (ResourceType.GHZ, ResourceType.LINEAR):
+        if ResourceGraph.cltype in (ResourceType.GHZ, ResourceType.LINEAR):
             self.ResourceGraphs.append(ResourceGraph)
         else:
-            raise TypeError(f"ResourceType {ResourceGraph.type} is not supported")
+            raise TypeError(f"ResourceType {ResourceGraph.cltype} is not supported")
 
     def get_readouts(self) -> list[Photon]:
         return [ph for ph in self.photons if ph.type == PhotonType.READOUT]
@@ -144,13 +153,13 @@ class PercevalCircuitConstructor:
         # Create circuits for all the ResourceGraphs
         photon_idx = 0
         for cl in self.ResourceGraphs:
-            if cl.type == ResourceType.GHZ:
+            if cl.cltype == ResourceType.GHZ:
                 circ.add(
                     [idx for idx in range(photon_idx, photon_idx + len(cl.graph.nodes))],
                     ghz_circuit(len(cl.graph.nodes)),
                     merge,
                 )
-            elif cl.type == ResourceType.LINEAR:
+            elif cl.cltype == ResourceType.LINEAR:
                 circ.add(
                     [idx for idx in range(photon_idx, photon_idx + len(cl.graph.nodes))],
                     linear_circuit(len(cl.graph.nodes)),
@@ -207,21 +216,24 @@ class PercevalCircuitConstructor:
         self._clifford_applied = True
 
 
-def local_clifford_circuit(clifford_id: int) -> pcvl.Circuit:
+def local_clifford_circuit(clifford_id: int | Clifford) -> pcvl.Circuit:
     """Create a Perceval Circuit for a local clifford.
 
     Parameters
     ----------
     mode_id : int
         Mode id.
-    clifford_id : int
-        Clifford id.
+    clifford_id : int or Clifford
+        Clifford id (0-23) or Clifford enum.
 
     Returns
     -------
     perceval.Circuit
         Perceval Circuit for a local clifford.
     """
+    # Convert Clifford enum to int if needed
+    if isinstance(clifford_id, Clifford):
+        clifford_id = clifford_id.value
     if not 0 <= clifford_id <= 23:
         raise ValueError("clifford_id must be in [0, 23]")
     circ = pcvl.Circuit(m=1, name="LOCAL CLIFFORD ID:" + str(clifford_id))

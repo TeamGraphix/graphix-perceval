@@ -4,11 +4,11 @@ import collections
 import itertools
 import sys
 import warnings
+from _collections_abc import dict_items
 from enum import Enum
 
 import perceval as pcvl
 import sympy as sp
-from _collections_abc import dict_items
 from perceval.algorithm import Sampler
 from perceval.utils import PostSelect
 from tabulate import tabulate
@@ -76,15 +76,13 @@ class PercevalExperiment:
         self.input_state = None
         self.output_states: dict[str, str] | None = None
 
-    def set_local_processor(self, backend: str, source: pcvl.Source = pcvl.Source(), name: str = None):
+    def set_local_processor(self, backend: str, name: str = None):
         r"""Set the local computing backend.
 
         Parameters
         ----------
         backend : str
             Name of a local backend.
-        source : :class:`perceval.Source` object, optional
-            Setting of single-photon source.
         name : str, optional
             Name for the processor.
         """
@@ -93,7 +91,7 @@ class PercevalExperiment:
             self.to_perceval()
         if self.processor is not None:
             warnings.warn("The processor has already been set. The previous processor will be overwritten.")
-        self.processor = pcvl.Processor(backend=backend, m_circuit=self.circ, source=source, name=name)
+        self.processor = pcvl.Processor(backend=backend, m_circuit=self.circ, name=name)
         self.backend = backend
 
         self.set_input_state()
@@ -136,7 +134,7 @@ class PercevalExperiment:
         input_state = input_state + ">"
 
         self.input_state = pcvl.BasicState(input_state)
-        self.processor.with_polarized_input(self.input_state)  # not with_input (it will not work for polarized input)
+        self.processor.with_input(self.input_state)
 
     def set_output_states(self):
         r"""Set the output states.
@@ -198,12 +196,17 @@ class PercevalExperiment:
             self.set_postselection()
 
         sampler = Sampler(self.processor)
-        probs = PhotonDistribution(sampler.probs()["results"])
+        result = sampler.probs()
 
-        if format_result:
-            probs.replace_keys(self.output_states)
+        # Convert BSDistribution to PhotonDistribution
+        dist = {}
+        for state, prob in result['results'].items():
+            key = str(state)
+            if format_result and self.output_states and key in self.output_states:
+                key = self.output_states[key]
+            dist[key] = float(prob)
 
-        return probs
+        return PhotonDistribution(dist)
 
     def sample(self, num_samples=1024, format_result: bool = True, postselection: bool = True) -> PhotonCount:
         """Run the MBQC pattern on IBMQ devices
@@ -241,11 +244,18 @@ class PercevalExperiment:
         """Postselect the results according to the pattern."""
         ps = PostSelect()
         for ph in self.get_readout_photons():
-            ps.eq([2 * ph.id, 2 * ph.id + 1], 1)
+            ps_ = PostSelect(f"[{2*ph.id}, {2*ph.id + 1}] == 1")
+            ps.merge(ps_)
         for ph in self.get_compute_photons():
-            ps.eq([2 * ph.id], 0).eq([2 * ph.id + 1], 1)
+            ps_ = PostSelect(f"[{2*ph.id}] == 0")
+            ps.merge(ps_)
+            ps_ = PostSelect(f"[{2*ph.id + 1}] == 1")
+            ps.merge(ps_)
         for ph in self.get_witness_photons():
-            ps.eq([2 * ph.id], 0).eq([2 * ph.id + 1], 1)
+            ps_ = PostSelect(f"[{2*ph.id}] == 0")
+            ps.merge(ps_)
+            ps_ = PostSelect(f"[{2*ph.id + 1}] == 1")
+            ps.merge(ps_)
 
         self.processor.set_postselection(ps)
 

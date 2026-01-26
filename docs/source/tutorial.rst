@@ -49,7 +49,7 @@ Then we define a circuit:
     # generate a slightly modified GHZ state generation pattern
     circuit = Circuit(3)
     simple_circ(circuit)
-    pattern = circuit.transpile()
+    pattern = circuit.transpile().pattern
 
     # plot the pattern
     nodes, edges = pattern.get_graph()
